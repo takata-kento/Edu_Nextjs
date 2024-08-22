@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { NextPage } from "next";
 
 export function generateStaticParams() {
     return [
@@ -40,3 +41,26 @@ export default function Page({ params }: { params: { id: string } }) {
         </div>
     )
 }
+
+// type SSGProps = { params: { id: string } }
+
+// const SSG: NextPage<SSGProps> = (prop) => {
+//     const { params } = prop
+//     const timestamp = new Date().toLocaleString()
+
+//     return (
+//         <div>
+//             <Head>
+//                 <title>Create Next App</title>
+//                 <link rel="icon" href="../../favicon.ico" />
+//             </Head>
+//             <main>
+//                 <p>このページは静的サイト生成によってビルド時に生成されたページです</p>
+//                 <p>{`/posts/${params.id}に対応するページです`}</p>
+//                 <p>{`${timestamp}に作成されたページです`}</p>
+//             </main>
+//         </div>
+//     )
+// }
+
+// export default SSG
